@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e9e1ff">
+  <meta name="description" content="Hey Squirtle. A little question from your Gengar.">
+  <title>Hey Squirtle! ♥</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="world" aria-hidden="true"><span class="cloud cloud-left"></span><span class="cloud cloud-right"></span><span class="spark spark-one">✦</span><span class="spark spark-two">✦</span><div class="grass"></div></div>
+  <main>
+    <p class="hello">hey, squirtle <span>♥</span></p>
+    <div class="pokemon-party" aria-label="Gengar loves Squirtle">
+      <div class="pokemon gengar"><img src="assets/gengar-pixel.gif" alt="Gengar"><span>me</span></div>
+      <span class="pixel-heart" aria-label="loves"></span>
+      <div class="pokemon squirtle"><img src="assets/squirtle-pixel.gif" alt="Squirtle"><span>you</span></div>
+    </div>
+    <section class="message-box" aria-labelledby="invitation-title">
+      <span class="speaker">GENGAR</span>
+      <h1 id="invitation-title">Will you go on a<br><em>date</em> with me?</h1>
+      <p>i choose you. now your turn :)</p>
+      <span class="dialogue-arrow" aria-hidden="true">▼</span>
+    </section>
+    <div class="buttons" id="button-area">
+      <button class="yes-button" id="yes-button">YES! <span aria-hidden="true">♥</span></button>
+      <button class="no-button" id="no-button" aria-label="No, this button is very shy">NO <span aria-hidden="true">×</span></button>
+    </div>
+    <p class="button-hint" id="button-hint" aria-live="polite">there’s only one right answer...</p>
+    <details class="memories" open>
+      <summary>our memories <span aria-hidden="true">▸</span></summary>
+      <div class="photo-grid">
+        <figure><div class="photo-placeholder" data-photo="1"><span>＋</span><small>photo 01</small></div><figcaption>you + me</figcaption></figure>
+        <figure><div class="photo-placeholder" data-photo="2"><span>＋</span><small>photo 02</small></div><figcaption>best day</figcaption></figure>
+        <figure><div class="photo-placeholder" data-photo="3"><span>＋</span><small>video 03</small></div><figcaption>press play ♥</figcaption></figure>
+      </div>
+    </details>
+  </main>
+  <footer><span class="footer-note">made just for you ♥</span><div class="sleeping-snorlax"><div class="sleep-letters" aria-hidden="true"><span>z</span><span>z</span><span>Z</span></div><img src="assets/snorlax-pixel.gif" alt="Snorlax sleeping peacefully"><span class="snorlax-caption">do not disturb.</span></div></footer>
+  <dialog id="yes-dialog" aria-labelledby="success-title">
+    <button class="close-dialog" id="close-dialog" aria-label="Close celebration">×</button>
+    <div class="success-pokemon"><img src="assets/gengar-pixel.gif" alt="Gengar"><span class="pixel-heart" aria-hidden="true"></span><img src="assets/squirtle-pixel.gif" alt="Squirtle"></div>
+    <h2 id="success-title">IT’S A DATE! <span>♥</span></h2>
+    <p>you made gengar very happy.</p>
+    <p class="success-note">send me a screenshot? :)</p>
+    <button class="yes-button" id="back-button">YAY! ♥</button>
+  </dialog>
+  <div id="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>

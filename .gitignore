@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+# Unused artwork and intermediate encodes from design previews.
+assets/gengar.png
+assets/squirtle.png
+assets/snorlax.png
+assets/our-memory-web.mp4
