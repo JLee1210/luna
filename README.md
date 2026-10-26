@@ -2,6 +2,8 @@
 
 A Pokémon date invitation built with plain HTML, CSS, and JavaScript. No install, paid hosting, or backend required.
 
+The story starts with Jaden’s letter, continues to four notes about Luna, and asks for forgiveness. Yes opens the date invitation; No opens a quiet message respecting her space. Screens fade between steps, with reduced-motion support. Reloading starts the story again.
+
 ## Preview
 
 Run `python3 -m http.server 4173` from this folder, then open http://localhost:4173.
@@ -16,7 +18,7 @@ For a video, use an entry such as `{ src: 'assets/us-2.mp4', type: 'video', alt:
 
 1. Create a public GitHub repository and upload `index.html`, `style.css`, `script.js`, and the `assets` folder.
 2. In the repository, open **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, branch **main**, folder **/ (root)**, then **Save**.
+3. Under **Build and deployment**, choose **Deploy from a branch**, branch **master**, folder **/ (root)**, then **Save**.
 4. GitHub will show the published URL when the deployment completes.
 
 All asset paths are relative so the page works inside a repository subpath. `.nojekyll` bypasses Jekyll processing. Pixel sprites and the Press Start 2P font are served locally with the site.

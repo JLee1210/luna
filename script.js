@@ -28,6 +28,46 @@ let escapes = 0;
 let lastEscape = 0;
 const hints = ['NO used teleport!', 'nice try, squirtle :)', 'NO fled the battle!', 'maybe try the green one? ♥'];
 
+const stage = document.getElementById('story-stage');
+const chapterLabel = document.getElementById('chapter-label');
+const chapterCount = document.getElementById('chapter-count');
+const chapters = {
+  letter: ['a note for you', '01 / 04'],
+  notes: ['learning to love you better', '02 / 04'],
+  forgive: ['one honest question', '03 / 04'],
+  date: ['our next adventure?', '04 / 04'],
+  space: ['take your time', '♥'],
+};
+let currentScreen = 'letter';
+let transitioning = false;
+
+async function showScreen(name) {
+  if (transitioning || name === currentScreen || !chapters[name]) return;
+  transitioning = true;
+  stage.setAttribute('aria-busy', 'true');
+  stage.inert = true;
+  stage.classList.add('is-fading');
+  const duration = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 260;
+  await new Promise(resolve => setTimeout(resolve, duration));
+  document.querySelectorAll('.story-screen').forEach(screen => { screen.hidden = screen.id !== `${name}-screen`; });
+  document.querySelectorAll('video').forEach(video => video.pause());
+  resetNo();
+  currentScreen = name;
+  chapterLabel.textContent = chapters[name][0];
+  chapterCount.textContent = chapters[name][1];
+  stage.inert = false;
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  stage.classList.remove('is-fading');
+  document.querySelector(`#${name}-screen h1`).focus({ preventScroll: true });
+  await new Promise(resolve => setTimeout(resolve, duration));
+  transitioning = false;
+  stage.setAttribute('aria-busy', 'false');
+}
+
+document.querySelectorAll('[data-go]').forEach(button => {
+  button.addEventListener('click', () => showScreen(button.dataset.go));
+});
+
 function escapeNo(event) {
   if (event) event.preventDefault();
   if (performance.now() - lastEscape < 150) return;
@@ -54,7 +94,7 @@ function escapeNo(event) {
 }
 
 document.addEventListener('pointermove', event => {
-  if (dialog.open || event.pointerType === 'touch') return;
+  if (currentScreen !== 'date' || transitioning || dialog.open || event.pointerType === 'touch') return;
   const rect = noButton.getBoundingClientRect();
   if (event.clientX > rect.left - 35 && event.clientX < rect.right + 35 && event.clientY > rect.top - 35 && event.clientY < rect.bottom + 35) escapeNo(event);
 });

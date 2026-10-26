@@ -10,7 +10,66 @@
 </head>
 <body>
   <div class="world" aria-hidden="true"><span class="cloud cloud-left"></span><span class="cloud cloud-right"></span><span class="spark spark-one">✦</span><span class="spark spark-two">✦</span><div class="grass"></div></div>
-  <main>
+  <main class="story-main">
+    <div class="story-progress" aria-label="Story progress"><span id="chapter-label">a note for you</span><span id="chapter-count">01 / 04</span></div>
+    <div id="story-stage" aria-busy="false">
+    <section class="story-screen" id="letter-screen" aria-labelledby="letter-title">
+      <div class="story-mascot"><img src="assets/gengar-pixel.gif" alt="Gengar with a little letter for Luna"><span class="envelope" aria-hidden="true">✉</span></div>
+      <div class="message-box story-box">
+        <span class="speaker">FROM JADEN</span>
+        <h1 id="letter-title" tabindex="-1">a note for Luna <em>♥</em></h1>
+        <div class="letter-copy">
+          <p>I know I am dumb dumb sometimes (maybe every time) and I am not the perfect boyfriend you want, but I am still cute and you said I'm hot but maybe not anymore but you still have to love me because I am so cute and Luna like cute guys</p>
+          <p>I will also try my best to become more manly and the Jaden I used to be who want to spend every minute with youuu.</p>
+          <p>I know the long distance makes it even harder and you probably don't want to even see or hear from me but just know that whatever I say or do... <strong>I love you.</strong></p>
+        </div>
+        <span class="letter-signoff">always, your gengar ♥</span>
+      </div>
+      <div class="story-navigation"><button class="yes-button" data-go="notes">NEXT ▸</button></div>
+    </section>
+
+    <section class="story-screen" id="notes-screen" aria-labelledby="notes-title" hidden>
+      <div class="story-mascot"><img src="assets/squirtle-pixel.gif" alt="Squirtle"><span class="mascot-note">taking notes...</span></div>
+      <div class="message-box story-box">
+        <span class="speaker">JADEN’S NOTES</span>
+        <h1 id="notes-title" tabindex="-1">things to remember<br>about <em>Luna</em></h1>
+        <ol class="luna-notes">
+          <li><p>When Luna is hormonal and have period coming soon, she can't control her emotions so you need to treat her extra careful and give her alone time she needs.</p></li>
+          <li><p>When Luna is on diet, don't order her any food. Instead be supportive of her journey and don't comment much because it is a sensitive topic.</p></li>
+          <li><p>Luna loves being spoiled so always be ready to spoil her or give her the greenlight to spoil herself with Jaden's card~ then Jaden need to make more money!</p></li>
+          <li><p>Even if Luna want alone time, she still think of Jaden. Don't go away completely. Be there for her when she need you, and don't play games...</p></li>
+        </ol>
+      </div>
+      <div class="story-navigation"><button class="text-button" data-go="letter">◂ BACK</button><button class="yes-button" data-go="forgive">NEXT ▸</button></div>
+    </section>
+
+    <section class="story-screen" id="forgive-screen" aria-labelledby="forgive-title" hidden>
+      <div class="story-mascot"><img src="assets/gengar-pixel.gif" alt="Gengar waiting quietly"><span class="mascot-note">one honest question.</span></div>
+      <div class="message-box story-box">
+        <span class="speaker">FROM MY HEART</span>
+        <div class="letter-copy">
+          <p>I know I am dumb and stupid and not manly and not romantic at times, but I still worry about you and think of you and if you're sad then I can't do anything so I didn't do anything today..</p>
+          <p>I don't deserve anything from you and I will never forget this moment. I promise I won't do that again.</p>
+          <p>I don't know what will make you happy because I think you can just leave me, but I will ask you just once because if I don't I think I will regret a lot and there's so many things I want to do with you that I haven't done so I dare to ask</p>
+        </div>
+        <h1 id="forgive-title" tabindex="-1">will you <em>forgive me?</em></h1>
+      </div>
+      <div class="story-navigation forgiveness-choices"><button class="yes-button" data-go="date">YES ♥</button><button class="no-button" data-go="space">NO</button></div>
+      <p class="choice-note">take your time. your answer is yours.</p>
+      <button class="text-button single-back" data-go="notes">◂ BACK</button>
+    </section>
+
+    <section class="story-screen quiet-screen" id="space-screen" aria-labelledby="space-title" hidden>
+      <div class="quiet-scene"><img src="assets/gengar-pixel.gif" alt="Gengar sitting quietly under the stars"><span aria-hidden="true">✦</span><span aria-hidden="true">·</span></div>
+      <div class="message-box story-box">
+        <span class="speaker">GENGAR USED LISTEN</span>
+        <h1 id="space-title" tabindex="-1">okay, Luna.</h1>
+        <div class="letter-copy"><p>You don’t have to forgive me right now.</p><p>I hear you. I’ll respect your space.<br>No more questions today.</p><p>Take care of yourself. ♥</p></div>
+      </div>
+      <button class="text-button single-back" data-go="letter">read the letter again</button>
+    </section>
+
+    <section class="story-screen date-screen" id="date-screen" aria-labelledby="invitation-title" hidden>
     <p class="hello">hey, squirtle <span>♥</span></p>
     <div class="pokemon-party" aria-label="Gengar loves Squirtle">
       <div class="pokemon gengar"><img src="assets/gengar-pixel.gif" alt="Gengar"><span>me</span></div>
@@ -19,7 +78,7 @@
     </div>
     <section class="message-box" aria-labelledby="invitation-title">
       <span class="speaker">GENGAR</span>
-      <h1 id="invitation-title">Will you go on a<br><em>date</em> with me?</h1>
+      <h1 id="invitation-title" tabindex="-1">Will you go on a<br><em>date</em> with me?</h1>
       <p>i choose you. now your turn :)</p>
       <span class="dialogue-arrow" aria-hidden="true">▼</span>
     </section>
@@ -36,6 +95,8 @@
         <figure><div class="photo-placeholder" data-photo="3"><span>＋</span><small>video 03</small></div><figcaption>press play ♥</figcaption></figure>
       </div>
     </details>
+    </section>
+    </div>
   </main>
   <footer><span class="footer-note">made just for you ♥</span><div class="sleeping-snorlax"><div class="sleep-letters" aria-hidden="true"><span>z</span><span>z</span><span>Z</span></div><img src="assets/snorlax-pixel.gif" alt="Snorlax sleeping peacefully"><span class="snorlax-caption">do not disturb.</span></div></footer>
   <dialog id="yes-dialog" aria-labelledby="success-title">
